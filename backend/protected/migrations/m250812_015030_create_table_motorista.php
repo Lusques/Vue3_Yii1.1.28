@@ -1,24 +1,24 @@
 <?php
 
-class m250812_013300_create_table_passageiro extends CDbMigration
+class m250812_015030_create_table_motorista extends CDbMigration
 {
 	public function up()
 	{
-		$this->createTable('passageiro', array(
+		$this->createTable('motorista', array(
 			'id' => 'pk',
 			'nome' => 'string NOT NULL',
+			'nascimento' => 'date NOT NULL',
 			'email' => 'string NOT NULL',
 			'telefone' => 'string NOT NULL',
+			'placa_veiculo' => 'string NOT NULL',
 			'status' => "ENUM('A','I') DEFAULT 'A'",
 			'data_hora_status' => 'datetime NOT NULL',
-			'nascimento' => 'date NOT NULL',
-			'obs' => 'varchar(200) DEFAULT NULL'
+			'obs' => 'varchar(200) DEFAULT NULL',
 		));
 	}
 
 	public function down()
 	{
-		$this->dropTable('passageiero');
 		return false;
 	}
 
